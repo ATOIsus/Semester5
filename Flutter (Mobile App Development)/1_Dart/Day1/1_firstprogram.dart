@@ -1,3 +1,6 @@
+//Date: April 3, 2023
+
+
 //To use stdin method
 import 'dart:io';
 
@@ -28,9 +31,9 @@ void main(){
 
 //##################################################################################################################################
 
-  // Convert Fahrenheit to Celcius.
+  // Convert Fahrenheit to Celsius.
 
-  stdout.write("\nEnter temperature in farenheight: ");
+  stdout.write("\nEnter temperature in fahrenheit: ");
   double? temp = double.parse(stdin.readLineSync()!);
 
   print("> $temp degrees fahrenheit is ${(temp-32) * 5 / 9}");
