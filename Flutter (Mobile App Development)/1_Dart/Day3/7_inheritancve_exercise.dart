@@ -1,3 +1,6 @@
+// April 5, 2023
+
+
 class Faculty{
   String? fullName;
   String? address;
@@ -45,6 +48,4 @@ void main(){
 
   print(partTimer.getDetails());
   print(fullTimer.getDetails());
-
-
 }
