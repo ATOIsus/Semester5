@@ -29,19 +29,13 @@ void main() {
   //Creating an object
   newClass cls = newClass(2, 3);
 
-
-
-
   int a = cls.add();
   print("sum is $a");
 
   print("Product is ${cls.multiply()}");
 
-
   cls.b = 30;
   print("sum is ${cls.add()}");
 
-
-  
   print("Division is ${cls.division()}");
 }

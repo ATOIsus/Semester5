@@ -52,8 +52,6 @@ void makeMap(){
     "Go" : "Janu hos"
   };
 
-  // Map cityCC = Map<String, String>();   // Map<keyType, valueType>
-
   englishToNeplai["Bye"] = "Tata";
 
   print(englishToNeplai);
