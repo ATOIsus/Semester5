@@ -7,7 +7,6 @@
 //console.log(y) // will cause error.
 //console.log(z) // will cause error.
 
-
 //Default.
 a = 0
 

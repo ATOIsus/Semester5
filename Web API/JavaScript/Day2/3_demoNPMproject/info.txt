@@ -1,0 +1,11 @@
+
+// npm init : Initialize a npm project, 
+// or npm init -y
+// npm install moduleName // It is shown under dependencies in package.jason
+
+
+//majorFunction.minorVersion.patch
+// ^ means majorVersion should be same and minorVersion or Patch can be different.
+// @ means specific majorVersion, minorVersion and patch should be same.
+
+// Need a git ignore and  have node_modules in it.
