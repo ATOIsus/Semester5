@@ -1,6 +1,8 @@
 //1. Write a dart program to create a class Laptop with properties [id, name, ram] and create 3 objects of it and print all details.
 
 
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 class Laptop {
   var id;
   var name;
