@@ -1,5 +1,7 @@
 // April 5, 2023
 
+// ignore_for_file: file_names, camel_case_types
+
 //Class name can be different from hte file name in dart.
 class newClass {
   int a;

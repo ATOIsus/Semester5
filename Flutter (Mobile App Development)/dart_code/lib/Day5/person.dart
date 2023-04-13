@@ -12,7 +12,6 @@ class Person with _$Person{
     }) = _Person;
 
     factory Person.fromJson(Map<String, Object?> json) => _$PersonFromJson(json);
-
 }
 
 

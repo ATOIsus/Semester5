@@ -1,6 +1,8 @@
 //Date: April 3, 2023
 
 
+// ignore_for_file: file_names
+
 //To use stdin method
 import 'dart:io';
 
