@@ -19,40 +19,56 @@
 
 
 const deepEqual = (var1, var2) => {
+
+    let returnValue = false;
+
+    //console.log(var1, " ", typeof(var1))
+    //console.log(var2, " ", typeof(var2))
+
     
      if (typeof(var1) === 'object' && typeof(var2) === 'object') {
 
-        if(var1 !== null && var2 !== null){
-            let lstElements1 = Object.keys(var1);
-            let lstElements2 = Object.keys(var2);  
+        if(!(var1 === null && var2 === null)){
+            const lstKeys1 = Object.keys(var1);
+            const lstKeys2 = Object.keys(var2);  
 
-            for (let i = 0; i < lstElements1.length-1; i++) {
-                if (lstElements1[i] === lstElements2[i]) {
-                    console.log(lstElements1[i] , lstElements2[i])
-                    
-                }else{
-                    return false;
-                }     
-            }
+            const lstValues1 = Object.values(var1);
+            const lstValues2 = Object.values(var2);
+
+            for (let i = 0; i < lstKeys1.length-1; i++) {
+                //console.log("Keys: " , lstKeys1[i], lstKeys2[i]);
+                //console.log("Values" ,lstValues1[i], lstValues2[i]);               
+
+                returnValue = deepEqual(lstKeys1[i], lstKeys2[i]);
+                returnValue = deepEqual(lstValues1[i], lstValues2[i]);
+            }       
+
+
         }else{
             console.log("Null is passed.")
-            return false;
+            returnValue = false;
         }
-    }  else if(var1 !== var2){
-        return false;
+    } 
+    
+    if(var1 === var2){
+        returnValue =  true;
+    }else{
+        returnValue = false;
     }
+    
 
-    return true;
+    return returnValue;
+
 }
 
 
 
-let obj = {here: {is: "an"}, object: 2};
+let obj = {here: {is: "an"}, obb: 2};
 
 console.log(deepEqual(obj, obj));
 
 // true
-console.log(deepEqual(obj, {here: 1, object: 2}));
+console.log(deepEqual(obj, {here: 1, obb: 2}));
 
 // false
-console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+console.log(deepEqual(obj, {here: {is: "an"}, obb: 2}));

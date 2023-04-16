@@ -1,5 +1,13 @@
 {
-  "dependencies": {
-    "date-fns": "^2.29.3"
-  }
+  "name": "3_demonpmproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "5_.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node ./5_.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
