@@ -1,0 +1,28 @@
+
+
+show databases
+
+
+use demo
+
+
+db.books.insertOne({title:"Titlee", author:"SomeAuthor"})
+
+
+show collections
+
+
+db.books.find()
+
+
+db.books.find({title: "Titlee"})
+
+
+db.books.deleteOne({title:"Titlee"})
+db.books.deleteOne({title:"Titlee", author:"SomeAuthor"})
+
+
+
+
+//Mongoose is ODM(Object Document Mapper) for MongoDB.
+//npm install mongoose
