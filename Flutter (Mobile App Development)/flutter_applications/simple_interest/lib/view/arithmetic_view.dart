@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_interest/model/artithmetic_model.dart';
+import 'package:simple_interest/model/arithmetic_model.dart';
 
 class ArithmeticView extends StatefulWidget {
   const ArithmeticView({super.key});
@@ -15,18 +15,34 @@ class _ArithmeticViewState extends State<ArithmeticView> {
   double sub = 0;
   double div = 0;
 
+  late ArithmeticModel obj; // Late initialization.
+
+  void addFun(){
+     obj = ArithmeticModel(); // Before setState because setState rebuilds the UI.
+     setState(() {
+                  add = obj.add(first: first, second: second);
+      });
+  }
+  
+  void subFun(){
+     obj = ArithmeticModel();
+     setState(() {
+                  add = obj.subtract(first: first, second: second);
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Title"),
+        title: const Text("Title"),
         centerTitle: true,
         elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(children: [
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           TextField(
             onChanged: (value) {
               first = double.parse(value);
@@ -38,7 +54,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
               ),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           TextField(
             onChanged: (value) {
               second = double.parse(value);
@@ -50,32 +66,26 @@ class _ArithmeticViewState extends State<ArithmeticView> {
               ),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                setState(() {
-                  ArithmeticModel obj = ArithmeticModel();
-                  add = obj.add(first: first, second: second);
-                });
+               addFun();
               },
-              child: Text('Add'),
+              child: const Text('Add'),
             ),
           ),
            SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                setState(() {
-                  ArithmeticModel obj = ArithmeticModel();
-                  sub = obj.subtract(first: first, second: second);
-                });
+                subFun();
               },
-              child: Text('Sub'),
+              child: const Text('Sub'),
             ),
           ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
            SizedBox(
             width: double.infinity,
             child: ElevatedButton(
@@ -85,32 +95,32 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                   div = obj.divide(first: first, second: second);
                 });
               },
-              child: Text('Divide'),
+              child: const Text('Divide'),
             ),
           ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
 
           Text(
             'Sum is $add',
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 20,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold),
           ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
 
           Text(
-            'Substraction is $sub',
-            style: TextStyle(
+            'Subtraction is $sub',
+            style: const TextStyle(
                 fontSize: 20,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold),
           ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
 
           Text(
             'Division is $div',
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 20,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold),

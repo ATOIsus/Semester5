@@ -18,12 +18,22 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
   double rate = 0;
   double interest = 0;
 
+  late SimpleInterestModel obj;
+
+
+   void simpleInterest(){
+     obj = SimpleInterestModel();
+     setState(() {
+          interest = obj.simpleInterest(principle: principle, time: time, rate: rate);
+      });
+  }
+
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+      Widget build(BuildContext context) {
+return Scaffold(
                     
               appBar: AppBar(
-                title: Text("Calculate Simple Interest Program"),
+                title: const Text("Calculate Simple Interest Program"),
                 centerTitle: true,
               ),
         
@@ -31,12 +41,12 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
             
             
             child: Padding(
-                  padding: EdgeInsets.all(8.0),   
+                  padding: const EdgeInsets.all(8.0),   
                   
                 child: Column(
                   children: [
                   
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                   
                             TextField(
                               onChanged: (value){
@@ -51,7 +61,7 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
                             ),
                   
                   
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                   
                             TextField(
                                 onChanged: (value) {
@@ -65,7 +75,7 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
                               ),
                             ),
                   
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                   
                             TextField(
                                onChanged: (value) {
@@ -79,26 +89,23 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
                               ),
                             ),
                             
-                              SizedBox(height: 12),
+                              const SizedBox(height: 12),
                   
                               SizedBox(
                               width: double.infinity,
                               child: ElevatedButton(
                                        onPressed: () {
-                                            setState(() {
-                                            SimpleInterestModel obj = SimpleInterestModel();
-                                            interest = obj.simpleInterest(principle: principle, time: time, rate: rate);
-                                      });
+                                           simpleInterest();
                                     },
                                       
-                                      child: Text('Calculate Interest'),
+                                      child: const Text('Calculate Interest'),
                   ),
                 ),
                   
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                   
                             Text('Simple Interest is $interest.',
-                                  style : TextStyle(
+                                  style : const TextStyle(
                                                 fontSize: 20,
                                                 fontStyle: FontStyle.italic,
                                                 fontWeight: FontWeight.bold
