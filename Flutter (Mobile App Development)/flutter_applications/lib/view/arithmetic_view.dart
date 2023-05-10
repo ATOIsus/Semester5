@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_interest/common/show_my_message.dart';
 
 import '../model/arithmetic_model.dart';
 
@@ -36,16 +35,6 @@ class _ArithmeticViewState extends State<ArithmeticView> {
     arithmetic = ArithmeticModel();
     setState(() {
       result = arithmetic.adding(
-        int.parse(firstController.text),
-        int.parse(secondController.text),
-      );
-    });
-  }
-
-  void sub() {
-    arithmetic = ArithmeticModel();
-    setState(() {
-      result = arithmetic.subbing(
         int.parse(firstController.text),
         int.parse(secondController.text),
       );
@@ -110,8 +99,6 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                     onPressed: () {
                       if (myKey.currentState!.validate()) {
                         add();
-                        Navigator.pushNamed(context, '/outputRoute',
-                            arguments: result);
                       }
                     },
                     child: const Text('ADD'),
@@ -122,10 +109,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      sub();
-                      showTextHai(context, result as String);
-                      Navigator.pushNamed(context, '/outputRoute',
-                          arguments: result);
+                      //  sub();
                     },
                     child: const Text('SUB'),
                   ),

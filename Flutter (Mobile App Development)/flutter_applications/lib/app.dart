@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'view/another_view.dart';
 import 'view/arithmetic_view.dart';
 import 'view/circle_view.dart';
 import 'view/column_view.dart';
 import 'view/dashboard_view.dart';
-import 'view/details_view.dart';
 import 'view/display_name_view.dart';
-import 'view/flexible_view.dart';
-import 'view/loadimage_view.dart';
-import 'view/media_query_view.dart';
-import 'view/output_view.dart';
 import 'view/rich_text_view.dart';
 import 'view/simple_view.dart';
 
@@ -35,15 +29,6 @@ class App extends StatelessWidget {
         '/richTextRoute' : (context) => const RichTextView(),
         '/columnRoute' : (context) => const ColumnView(),
 
-        '/outputRoute' : (context) => const OutputView(),
-        '/containerRoute' : (context) => const AnotherView(),
-
-         '/imageRoute' : (context) => const LoadImageView(),
-          '/mediaRoute' : (context) => const MediaQueryView(),
-
-          '/flexibleRoute' : (context) => const FlexibleView(),
-
-          '/studentRoute' : (context) => const DetailsView(),
         },
     );
   }
