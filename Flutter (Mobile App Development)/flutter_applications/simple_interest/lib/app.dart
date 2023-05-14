@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'view/another_view.dart';
 import 'view/arithmetic_view.dart';
+import 'view/card_view.dart';
 import 'view/circle_view.dart';
 import 'view/column_view.dart';
 import 'view/dashboard_view.dart';
 import 'view/details_view.dart';
 import 'view/display_name_view.dart';
 import 'view/flexible_view.dart';
+import 'view/grid_view_screen.dart';
 import 'view/loadimage_view.dart';
 import 'view/media_query_view.dart';
 import 'view/output_view.dart';
@@ -44,6 +46,9 @@ class App extends StatelessWidget {
           '/flexibleRoute' : (context) => const FlexibleView(),
 
           '/studentRoute' : (context) => const DetailsView(),
+          
+          '/cardRoute' : (context) => const CardView(),
+          '/gridRoute' : (context) => const GridViewScreen(),
         },
     );
   }

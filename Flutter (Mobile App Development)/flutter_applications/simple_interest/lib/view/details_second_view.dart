@@ -13,7 +13,7 @@ class _DetailsSecondViewState extends State<DetailsSecondView> {
     return Scaffold(
       
       appBar: AppBar(
-        title: const Text('Student Detials'),
+        title: const Text('Card View'),
       ),
 
       body: ListTile(
