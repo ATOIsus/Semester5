@@ -21,16 +21,17 @@ class _RegisterViewState extends State<RegisterView> {
   List<User> lstUser = [];
   List<Book> lstBook = [];
 
-   var lstAll = [];
-  
+  var lstAll = [];
+
   @override
   void didChangeDependencies() {
-    lstAll = ModalRoute.of(context)!.settings.arguments as List;
-    lstUser = lstAll[0];
-    lstBook = lstAll[1];
-    super.didChangeDependencies();
+    if (ModalRoute.of(context)!.settings.arguments != null) {
+      lstAll = ModalRoute.of(context)!.settings.arguments as List;
+      lstUser = lstAll[0];
+      lstBook = lstAll[1];
+      super.didChangeDependencies();
+    }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +130,6 @@ class _RegisterViewState extends State<RegisterView> {
                       username: username,
                       password: password);
                   lstUser.add(obj);
-                  lstAll[0] = lstUser;
                   Navigator.pushNamed(context, '/login',
                       arguments: [lstUser, lstBook]);
                 },

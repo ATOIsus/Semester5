@@ -70,16 +70,15 @@ class _LogInViewState extends State<LogInView> {
                         lstUser[i].password == password) {
                       Navigator.pushNamed(context, '/bookAdd',
                           arguments: lstAll);
-                    }                          
+                      return;
+                    }
                   }
-                    ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                  content: Text("Wrong Username or Password"),
-                  duration: Duration(seconds: 1),
-                  backgroundColor: Colors.red,
-                  behavior: SnackBarBehavior.floating,
-                  )
-                  );
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Wrong Username or Password"),
+                    duration: Duration(seconds: 1),
+                    backgroundColor: Colors.red,
+                    behavior: SnackBarBehavior.floating,
+                  ));
                 },
                 child: const Text('Log In'),
               ),
