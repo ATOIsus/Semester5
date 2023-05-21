@@ -32,25 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }
 
-    // Show an alert dialog with an error message
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Error'),
-          content: const Text('Invalid username or password'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Close'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+                
 
   @override
   Widget build(BuildContext context) {

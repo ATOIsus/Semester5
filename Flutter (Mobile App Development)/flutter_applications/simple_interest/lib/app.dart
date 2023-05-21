@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_interest/view/stack_view.dart';
 
 import 'view/another_view.dart';
 import 'view/arithmetic_view.dart';
@@ -49,6 +50,8 @@ class App extends StatelessWidget {
           
           '/cardRoute' : (context) => const CardView(),
           '/gridRoute' : (context) => const GridViewScreen(),
+
+                    '/stackRoute' : (context) => const StackView(),
         },
     );
   }

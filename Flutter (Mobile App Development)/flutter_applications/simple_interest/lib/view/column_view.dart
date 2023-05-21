@@ -10,7 +10,7 @@ class ColumnView extends StatefulWidget {
 class _ColumnViewState extends State<ColumnView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
 
@@ -18,7 +18,7 @@ class _ColumnViewState extends State<ColumnView> {
 
           children: [
             Row(
-              children: const [
+              children: [
                 Icon(
                   Icons.star,
                   size: 20,
@@ -37,7 +37,7 @@ class _ColumnViewState extends State<ColumnView> {
               ],
             ),
           Row(
-              children: const [
+              children: [
                 Icon(
                   Icons.star,
                   size: 20,
