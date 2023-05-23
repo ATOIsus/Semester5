@@ -1,0 +1,3 @@
+create project: npx create-next-app@latest ./
+
+run project: npm run dev
