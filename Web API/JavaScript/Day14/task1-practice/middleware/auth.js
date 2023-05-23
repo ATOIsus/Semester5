@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 const verifyUser = (req, res, next) => {
     let token = req.headers.authorization
-    if (!token) return res.status(401).json({ error: 'auth token not present' })
+    if (!token) return res.status(401).json({ error: 'User not logged in!!' })
     token = token.split(' ')[1]
 
     jwt.verify(token, process.env.SECRET, (err, payload) => {
@@ -15,13 +15,4 @@ const verifyUser = (req, res, next) => {
     next()
 }
 
-
-const verifyUserToWrite = (req, res, next) => {
-    if (req.user.role !== 'write') {
-        return res.status(403).json({ error: "You cannot create todos!!" })
-    } else if (req.user.role == 'write') {
-        next()
-    }
-}
-
-module.exports = { verifyUser, verifyUserToWrite }
+module.exports = { verifyUser }
