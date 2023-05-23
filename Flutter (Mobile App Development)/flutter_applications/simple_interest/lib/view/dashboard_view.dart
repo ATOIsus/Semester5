@@ -16,166 +16,155 @@ class DashboardView extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
             const SizedBox(height: 8),
-           
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                    Navigator.pushNamed(context, '/arithmeticRoute');
+                  Navigator.pushNamed(context, '/arithmeticRoute');
                 },
                 child: const Text('Arithmetic'),
               ),
             ),
-             SizedBox(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/siRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/siRoute');
                 },
                 child: const Text('Simple Interest'),
               ),
             ),
-            
             const SizedBox(height: 8),
-      
-             SizedBox(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/circleRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/circleRoute');
                 },
                 child: const Text('Circle'),
               ),
             ),
-                           
             const SizedBox(height: 8),
-      
-             SizedBox(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/displayRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/displayRoute');
                 },
                 child: const Text('Display Name'),
               ),
             ),
-      
             const SizedBox(height: 8),
-      
-             SizedBox(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/richTextRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/richTextRoute');
                 },
                 child: const Text('Rich Text'),
               ),
             ),
-      
             const SizedBox(height: 8),
-      
-             SizedBox(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/columnRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/columnRoute');
                 },
                 child: const Text('Column'),
               ),
             ),
-      
-      
             const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/containerRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/containerRoute');
                 },
                 child: const Text('Container'),
               ),
             ),
-      
             const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/imageRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/imageRoute');
                 },
                 child: const Text('Load Image'),
               ),
             ),
-      
-              const SizedBox(height: 8),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/mediaRoute');    
-                },
-                child: const Text('Media Query'),
-              ),
-            ),
-      
-             const SizedBox(height: 8),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/flexibleRoute');    
-                },
-                child: const Text('Flexible'),
-              ),
-            ),
-      
-      
             const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/studentRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mediaRoute');
+                },
+                child: const Text('Media Query'),
+              ),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/flexibleRoute');
+                },
+                child: const Text('Flexible'),
+              ),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/studentRoute');
                 },
                 child: const Text('Student Details'),
               ),
             ),
-      
-      
-             const SizedBox(height: 8),
+            const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/cardRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/cardRoute');
                 },
                 child: const Text('Card View'),
               ),
             ),
-      
-                const SizedBox(height: 8),
+            const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/gridRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/gridRoute');
                 },
                 child: const Text('Grid View Screen'),
               ),
             ),
-
-                  const SizedBox(height: 8),
+            const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {   
-                  Navigator.pushNamed(context, '/stackRoute');    
+                onPressed: () {
+                  Navigator.pushNamed(context, '/stackRoute');
                 },
                 child: const Text('Stack View Screen'),
               ),
             ),
-      
-                    
+
+              const SizedBox(height: 8),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/galleryRoute');
+                },
+                child: const Text('Gallery'),
+              ),
+            ),
           ]),
         ),
       ),

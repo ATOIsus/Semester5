@@ -7,76 +7,68 @@ class StackView extends StatefulWidget {
   State<StackView> createState() => _StackViewState();
 }
 
-
 class _StackViewState extends State<StackView> {
-
-  var lstStudent = [1,2,3,4,5];
- // Show an alert dialog with an error message
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Error'),
-          content: const Text('Invalid username or password'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Close'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  var lstStudent = [1, 2, 3, 4, 5];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: ListView.builder(
-            shrinkWrap: true, ///Attentionnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-            itemCount: lstStudent.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                  onDoubleTap: () => {
+          shrinkWrap: true,
 
-                    setState((){
-                       lstStudent.removeAt(index);
-                    }),
-                        
-                      },
-                  child: Column(
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Container(
-                            height: 400,
-                            width: double.infinity,
-                            color: Colors.green,
-                            child: Image.network(
-                                'https://www.shutterstock.com/image-photo/old-brick-black-color-wall-260nw-1605128917.jpg',
-                                fit: BoxFit.fill),
-                          ),
-                        
-                        ],
+          ///Attentionnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+          itemCount: lstStudent.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+                onDoubleTap: () => {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('Error'),
+                            content: const Text('Invalid username or password'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    lstStudent.removeAt(index);
+                                  });
+                                },
+                                child: const Text('Close'),
+                              ),
+                            ],
+                          );
+                        },
                       ),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        
-                        children: [
-                        
+                    },
+                child: Column(
+                  children: [
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Container(
+                          height: 400,
+                          width: double.infinity,
+                          color: Colors.green,
+                          child: Image.network(
+                              'https://www.shutterstock.com/image-photo/old-brick-black-color-wall-260nw-1605128917.jpg',
+                              fit: BoxFit.fill),
+                        ),
+                      ],
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                         Text("Name"),
-                         Text("Batch"),
-                      ],)
-                    ],
-                  ));
-            },
-            ),
-
-            
+                        Text("Batch"),
+                      ],
+                    )
+                  ],
+                ));
+          },
+        ),
       ),
     );
   }
