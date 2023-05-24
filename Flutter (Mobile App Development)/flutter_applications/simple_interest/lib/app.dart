@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '/view/stack_view.dart';
+import 'view/data_table_view.dart';
+import 'view/stack_view.dart';
 import 'view/another_view.dart';
 import 'view/arithmetic_view.dart';
 import 'view/card_view.dart';
@@ -51,6 +52,9 @@ class App extends StatelessWidget {
         '/stackRoute': (context) => const StackView(),
 
         '/galleryRoute': (context) => const GalleryView(),
+
+
+        '/dataTableRoute': (context) => const DataTableView(),
       },
     );
   }
