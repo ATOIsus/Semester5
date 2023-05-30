@@ -7,6 +7,7 @@ export default function Notes(props) {
 
     const [name, setName] = useState(' ')
     const [phone, setPhone] = useState(' ')
+    const [search, setSearch] = useState(' ')
     const [phoneBook, setPhoneBook] = useState(props.contacts)
 
     const handleChangeName = (event) => {
@@ -15,6 +16,10 @@ export default function Notes(props) {
 
     const handleChangePhone = (event) => {
         setPhone(event.target.value)
+    }
+
+    const handleChangeSearch = (event) => {
+        setSearch(event.target.value)
     }
 
 
@@ -26,7 +31,7 @@ export default function Notes(props) {
             phone: phone
         }
 
-        
+
         if (updateId != ' ') {
 
             setPhoneBook(phoneBook.map(book => {
@@ -42,15 +47,13 @@ export default function Notes(props) {
 
         }
 
-        else{
+        else {
             setPhoneBook(phoneBook.concat(newPhoneBook))
 
         }
 
 
     }
-
-
 
     const handleDelete = (id) => {
         setPhoneBook(phoneBook.filter((el) => { return el.id != id; }))
@@ -66,6 +69,29 @@ export default function Notes(props) {
                 setUpdateId(book.id)
             }
         })
+    }
+
+
+    const handleSearch = (params) => {
+
+        console.log(`hello`)
+
+        let found = false
+        let foundBook
+
+        phoneBook.map((book) => {
+            console.log(`${book.id}${book.name}${book.phone}`)
+            if (book.id == search || book.name == search  || book.phone == search ) {
+               found = true
+               foundBook = book
+            }
+        })
+
+        if(found){
+            alert(foundBook.name)
+        }else{
+            alert( `${search } Phonebook not found!`)
+        }
 
     }
 
@@ -73,6 +99,13 @@ export default function Notes(props) {
     return (
         <div>
             <h2> List of contacts </h2>
+
+            <input
+                type="search"
+                placeholder="Search here"
+                onChange={handleChangeSearch}
+                value={search} />
+            <button onClick={(search) => handleSearch(search)}>Search</button>
 
             <table>
                 <thead>
