@@ -1,9 +1,10 @@
+import 'package:botton_navigation/theme/app_theme.dart';
+import 'package:flutter/material.dart';
 
 import 'view/about_us_view.dart';
 import 'view/dashboard.dart';
 import 'view/home.dart';
 import 'view/profile.dart';
-import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,6 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: AppTheme.getApplicationTheme(),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-class AboutUsView extends StatefulWidget {
-  const AboutUsView({super.key});
+class TestView extends StatefulWidget {
+  const TestView({super.key});
 
   @override
-  State<AboutUsView> createState() => _AboutUsViewState();
+  State<TestView> createState() => _TestViewState();
 }
 
-class _AboutUsViewState extends State<AboutUsView> {
+class _TestViewState extends State<TestView> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
        appBar: AppBar(
-        title: const Text("About Us"),
+        title: const Text("Test"),
         centerTitle: true,
       ),
           body: const SafeArea(
             child: Center(
-              child: Text("About Us"),
+              child: Text("Test"),
               ),
               ),
     );

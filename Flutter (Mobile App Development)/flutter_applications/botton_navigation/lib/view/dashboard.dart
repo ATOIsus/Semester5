@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+
 import 'about_us_view.dart';
 import 'home.dart';
 import 'profile.dart';
-import 'package:flutter/material.dart';
+import 'test_view.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -17,17 +19,20 @@ class _DashboardViewState extends State<DashboardView> {
     const HomeView(),
     const ProfileView(),
     const AboutUsView(),
-    const DashboardView()
+    const DashboardView(),
+    const TestView()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Dashboard"),
-        centerTitle: true,
-      ),
       body: lstBottomScreen[_selectedIndex],
+      floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        onPressed: () {},
+        child: const Icon(Icons.qr_code),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const [
@@ -42,6 +47,10 @@ class _DashboardViewState extends State<DashboardView> {
           BottomNavigationBarItem(
             icon: Icon(Icons.question_answer),
             label: 'About us',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.military_tech_outlined),
+            label: 'Test',
           )
         ],
         backgroundColor: Colors.indigo,
