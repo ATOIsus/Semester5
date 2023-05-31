@@ -37,7 +37,7 @@ class AppTheme {
       //   ),
       // ),
 
-       // Change text field theme
+      // Change text field theme
       inputDecorationTheme: const InputDecorationTheme(
         contentPadding: EdgeInsets.all(15),
         border: OutlineInputBorder(),
