@@ -135,11 +135,17 @@ class _RegisterViewState extends State<RegisterView> {
                     .toList(),
                 listType: MultiSelectListType.CHIP,
                 onConfirm: (values) {
+                  _lstChosenCourses.clear();
+                  print(values);
                   chosenCourse = values;
-                  _lstChosenCourses.add(chosenCourse[0].courseId!);
+                  for (var i = 0; i < chosenCourse.length; i++) {
+                    _lstChosenCourses.add(chosenCourse[i].courseId!);
+                  }
+
                   chosenCourse = [];
                 },
               ),
+              _gap,
               TextFormField(
                 controller: _usernameController,
                 decoration: const InputDecoration(labelText: "Username"),
