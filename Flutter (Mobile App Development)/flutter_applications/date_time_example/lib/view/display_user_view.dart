@@ -30,9 +30,11 @@ class _DisplayUserViewState extends State<DisplayUserView> {
                 height: 150,
                 width: double.infinity,
                 child: Card(
+                  color: Colors.blue,
                   child: Center(
-                    child: Text(" Id:  ${lstUsers[index].id} \n Name: ${lstUsers[index].name} \n DOB: ${lstUsers[index].date!.day}/${lstUsers[index].date!.month}/${lstUsers[index].date!.year}  \n Time: ${lstUsers[index].time!.hour}:${lstUsers[index].time!.minute}",
-                      ),
+                    child: Text(
+                      " Id:  ${lstUsers[index].id} \n Name: ${lstUsers[index].name} \n DOB: ${lstUsers[index].date!.day}/${lstUsers[index].date!.month}/${lstUsers[index].date!.year}  \n Time: ${lstUsers[index].time!.hour}:${lstUsers[index].time!.minute}",
+                    ),
                   ),
                 ),
               ),

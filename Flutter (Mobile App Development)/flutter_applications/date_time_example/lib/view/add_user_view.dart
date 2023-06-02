@@ -15,7 +15,6 @@ class _AddUserViewState extends State<AddUserView> {
 
   final gap = const SizedBox(height: 20);
   var name = '';
-  var password = '';
   var id = ' ';
 
   TimeOfDay? time = TimeOfDay.now();
@@ -49,16 +48,7 @@ class _AddUserViewState extends State<AddUserView> {
                     name = text;
                   },
                   decoration: const InputDecoration(
-                    hintText: 'Username',
-                  ),
-                ),
-                gap,
-                TextField(
-                  onChanged: (text) {
-                    password = text;
-                  },
-                  decoration: const InputDecoration(
-                    hintText: 'Password',
+                    hintText: 'Full Name',
                   ),
                 ),
                 gap,
