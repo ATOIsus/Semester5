@@ -1,0 +1,6 @@
+npm install  daisyui
+  plugins: [require('daisyui')],
+
+
+ npm install react-icons
+ 
