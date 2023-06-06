@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final simpleInteresHaitProvider = Provider<SimpleInterestHai>((ref) => SimpleInterestHai());
+final simpleInterestHaiProvider = Provider<SimpleInterestHai>((ref) => SimpleInterestHai());
 
 
 class SimpleInterestHai {

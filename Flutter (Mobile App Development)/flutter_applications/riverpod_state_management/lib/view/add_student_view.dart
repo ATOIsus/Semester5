@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../logic/simple_interest.dart';
-
-final simpleInterestProvider = StateProvider<double>((ref) => 0);
-
-class SimpleInterestView extends ConsumerStatefulWidget {
-  const SimpleInterestView({super.key});
+class AddStudentView extends ConsumerStatefulWidget {
+  const AddStudentView({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _AddViewState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _AddStudentViewState();
 }
 
-class _AddViewState extends ConsumerState<SimpleInterestView> {
-  final principalController = TextEditingController();
-  final rateController = TextEditingController();
-  final timeController = TextEditingController();
+final fNameProvider = StateProvider<String>((ref) => ' ');
+final lNameProvider = StateProvider<String>((ref) => ' ');
+final dobProvider = StateProvider<String>((ref) => ' ');
 
-  double result = 0;
+class _AddStudentViewState extends ConsumerState<AddStudentView> {
+  final fNameController = TextEditingController();
+  final lNameController = TextEditingController();
+  final dobController = TextEditingController();
 
   final myKey = GlobalKey<FormState>();
 
@@ -25,7 +23,7 @@ class _AddViewState extends ConsumerState<SimpleInterestView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SimpleInterest'),
+        title: const Text('Student'),
         centerTitle: true,
         elevation: 0,
       ),
@@ -38,51 +36,51 @@ class _AddViewState extends ConsumerState<SimpleInterestView> {
               children: [
                 const SizedBox(height: 8),
                 TextFormField(
-                  controller: principalController,
-                  keyboardType: TextInputType.number,
+                  controller: fNameController,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    hintText: 'Principal',
+                    hintText: 'Enter first name',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter principal';
+                      return 'Please enter first name';
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
-                  controller: timeController,
-                  keyboardType: TextInputType.number,
+                  controller: lNameController,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Time',
+                    labelText: 'Enter last name',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter time';
+                      return 'Please enter last name';
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
-                  controller: rateController,
-                  keyboardType: TextInputType.number,
+                  controller: dobController,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Rate',
+                    labelText: 'Enter DOB',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter rate';
+                      return 'Please enter DOB';
                     }
                     return null;
                   },
@@ -93,21 +91,19 @@ class _AddViewState extends ConsumerState<SimpleInterestView> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (myKey.currentState!.validate()) {
-                        var simpleInterest =
-                            ref.read(simpleInterestHaiProvider);
-                        int principal = int.parse(principalController.text);
-                        int time = int.parse(timeController.text);
-                        int rate = int.parse(rateController.text);
-                        result = simpleInterest.calc(principal, time, rate);
-                        ref.read(simpleInterestProvider.notifier).state =
-                            result;
+                        ref.read(fNameProvider.notifier).state =
+                            fNameController.text.trim();
+                        ref.read(lNameProvider.notifier).state =
+                            lNameController.text.trim();
+                        ref.read(dobProvider.notifier).state =
+                            dobController.text.trim();
                       }
                     },
-                    child: const Text('Calculate Simple Interest'),
+                    child: const Text('ADD'),
                   ),
                 ),
                 Text(
-                  'Simple Interest is : ${ref.watch(simpleInterestProvider)}',
+                  'Data is : ${ref.watch(fNameProvider)}, ${ref.watch(lNameProvider)}, ${ref.watch(dobProvider)}',
                   style: const TextStyle(
                     fontSize: 20,
                     fontStyle: FontStyle.italic,
