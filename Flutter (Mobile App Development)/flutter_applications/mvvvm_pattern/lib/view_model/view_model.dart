@@ -3,7 +3,8 @@ import 'package:mvvvm_pattern/state/student_state.dart';
 
 import '../model/student.dart';
 
-final studentViewModelProvider = StateNotifierProvider<StudentViewModel, StudentState>(
+final studentViewModelProvider =
+    StateNotifierProvider<StudentViewModel, StudentState>(
   (ref) => StudentViewModel(),
 );
 
@@ -25,6 +26,12 @@ class StudentViewModel extends StateNotifier<StudentState> {
       Student(fname: 'John1', lname: 'Don don', dob: '04/12/1999'),
       Student(fname: 'John2', lname: 'Bhai', dob: '01/02/1099'),
     ];
+    state = state.copyWith(isLoading: false);
+  }
+
+  void deleteStudent(Student obj) {
+    state = state.copyWith(isLoading: true);
+    state.students.remove(obj);
     state = state.copyWith(isLoading: false);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_clean_arch/features/splash/presentation/view/splash_screen_view.dart';
 import 'package:student_clean_arch/view/add_batch.dart';
 import 'package:student_clean_arch/view/login_view.dart';
 import 'package:student_clean_arch/view/register_view.dart';
@@ -17,8 +18,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/register',
+        initialRoute: '/splash',
         routes: {
+          '/splash': (context) => const SplashView(),
           '/login': (context) => const LogInView(),
           '/register': (context) => const RegisterView(),
           '/addBatch': (context) => const SelectBatchView(),

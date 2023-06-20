@@ -98,12 +98,13 @@ class _AddStudentViewState extends ConsumerState<AddStudentView> {
                           lname: lNameController.text.trim(),
                           dob: dobController.text.trim(),
                         );
-      
+
                         ref
                             .read(studentViewModelProvider.notifier)
                             .addStudent(student);
-      
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
                           content: Text("Student Added"),
                           backgroundColor: Colors.green,
                         ));
@@ -113,26 +114,36 @@ class _AddStudentViewState extends ConsumerState<AddStudentView> {
                   ),
                 ),
                 data.students.isNotEmpty
-                    ? Container(
-                        child: ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            itemCount: data.students.length,
-                            itemBuilder: (context, index) {
-                              return ListTile(
-                                title: Text(data.students[index].fname!),
-                                subtitle: Text(data.students[index].lname!),
-                                trailing: Wrap(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: const Icon(Icons.delete),
-                                    )
-                                  ],
-                                ),
-                              );
-                            }),
-                      )
+                    ? ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemCount: data.students.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(data.students[index].fname!),
+                            subtitle: Text(data.students[index].lname!),
+                            trailing: Wrap(
+                              children: [
+                                IconButton(
+                                  onPressed: () {
+                                    //await showAlertDialog(context, index);
+
+                                    ref
+                                        .read(studentViewModelProvider.notifier)
+                                        .deleteStudent(data.students[index]);
+
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(const SnackBar(
+                                      content: Text("Student Deleted!"),
+                                      backgroundColor: Colors.red,
+                                    ));
+                                  },
+                                  icon: const Icon(Icons.delete),
+                                )
+                              ],
+                            ),
+                          );
+                        })
                     : const Text('Data chaina bhai')
               ],
             ),
@@ -141,4 +152,58 @@ class _AddStudentViewState extends ConsumerState<AddStudentView> {
       ),
     );
   }
+
+  showAlertDialog(BuildContext context, int index) {
+    // set up the buttons
+    Widget cancelButton = ElevatedButton(
+      child: const Text("Cancel"),
+      onPressed: () {
+        Navigator.pop(context, false);
+      },
+    );
+    Widget continueButton = ElevatedButton(
+      child: const Text("Ok"),
+      onPressed: () {
+        //ref.read(studentViewModelProvider.notifier).deleteStudent(index);
+        Navigator.pop(context, false);
+      },
+    );
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: const Text("AlertDialog"),
+      content: const Text("Are you sure you want to delete?"),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Go to StateFulWidget
+//Press Alt
+//Hold Alt and go before all State
+//Write Consumer infront of Stateful
