@@ -10,10 +10,10 @@ const {
   deleteCourse,
 } = require("../controllers/course");
 
-router.get("/getAllCourse", getCourses);
+router.get("/getAllCourses", getCourses);
 router.get("/:id", getCourse);
 
-router.post("/", createCourse);
+router.post("/createCourse", createCourse);
 router.put("/:id", protect, updateCourse);
 router.delete("/:id", protect, deleteCourse);
 
