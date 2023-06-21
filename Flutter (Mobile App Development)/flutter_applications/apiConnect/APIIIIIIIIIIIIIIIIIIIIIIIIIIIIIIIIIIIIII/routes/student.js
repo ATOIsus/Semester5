@@ -19,7 +19,7 @@ const {
 router.post("/uploadImage", upload, uploadImage);
 router.post("/register", register);
 router.post("/login", login);
-router.get("/getAllStudents", protect, getStudents);
+router.get("/getAllStudents",  getStudents);
 router.get("/getStudentsByBatch/:batchId", protect, searchByBatch);
 router.get("/getStudentsByCourse/:courseId", protect, searchByCourse);
 router.put("/updateStudent/:id", protect, updateStudent);
