@@ -53,6 +53,8 @@ studentSchema.pre("save", async function (next) {
 studentSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,
+
+
   });
 };
 
