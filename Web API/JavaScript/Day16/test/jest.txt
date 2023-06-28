@@ -1,0 +1,25 @@
+Jest: For testing
+
+> npm install jest --save-dev
+> "test": "jest --verbose" in scripts of package.json
+> --verbose : to get feedback in terminal
+
+    "test": "jest --verbose --runInBand --coverage",
+
+--runInBand: parallel execution
+--coverage: nodemon for jest and detailed result
+
+> extension should be .test.js
+
+Logical collection of test cases: test suite
+
+
+
+> Don't upload coverage report to git
+
+
+npm install supertest --save-dev
+
+npm install cross-env
+
+set NODE_ENV=test
