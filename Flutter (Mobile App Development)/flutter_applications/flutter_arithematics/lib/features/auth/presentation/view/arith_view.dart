@@ -95,12 +95,12 @@ class _RegisterViewState extends State<ArithView> {
                           var difference = obj.sub();
 
                           
-                          setState(() {
-                            result = difference;
-                          });
+                          // setState(() {
+                          //   result = difference;
+                          // });
 
-                          // Navigator.pushNamed(context, AppRoute.resultRoute,
-                          //     arguments: difference);
+                          Navigator.pushNamed(context, AppRoute.resultRoute,
+                              arguments: difference);
                         }
                       },
                       child: const Text('Subtract'),
