@@ -1,0 +1,5 @@
+Step 1: Create the .github\workflows folder.
+Step 2: Write workflow in yml file
+Step 3: Push code.
+Step 4: Sign up to https://vercel.com
+Step 5: Link the pushed repo with vercel.

@@ -1,0 +1,19 @@
+name: CI/CD
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    integration_pipeline:
+        runs-on: ubuntu-latest
+        steps: 
+         - name: checkout code
+           uses: actions/checkout@v2
+
+         - name: install packages
+           run: npm install
+
+         - name: run tests
+           run: npm test
